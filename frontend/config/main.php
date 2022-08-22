@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'language'=>'uz-UZ',
     'components' => [
         'request' => [
             'baseUrl' => '',
@@ -38,6 +39,7 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
+            'scriptUrl'=>'/index.php',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [

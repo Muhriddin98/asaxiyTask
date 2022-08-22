@@ -7,25 +7,24 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-backend',
+    'id' => 'app-restapi',
     'basePath' => dirname(__DIR__),
-    'controllerNamespace' => 'backend\controllers',
+    'controllerNamespace' => 'restapi\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
     'language'=>'uz-UZ',
     'components' => [
         'request' => [
-            'baseUrl'=>'/backend',
-            'csrfParam' => '_csrf-backend',
+            'baseUrl'=>'/restapi',
+            'csrfParam' => '_csrf-restapi',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
-        ],
-        'session' => [
-            // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-backend',
+            'identityCookie' => ['name' => '_identity-restapi', 'httpOnly' => true],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -36,16 +35,24 @@ return [
                 ],
             ],
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
         'urlManager' => [
-            'scriptUrl'=>'/backend/index.php',
+            'scriptUrl'=>'/restapi/index.php',
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => [
+                        'nomzod',
+                        'eslatma'
+                    ],
+                    'extraPatterns' => [
+
+                    ]
+                ],
             ],
-        ],
+        ]
     ],
     'params' => $params,
 ];

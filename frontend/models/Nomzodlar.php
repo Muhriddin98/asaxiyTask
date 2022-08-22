@@ -16,7 +16,6 @@ use yii\db\ActiveRecord;
  * @property string $EmailAddress
  * @property string $PhoneNumber
  * @property int $Age
- * @property int $Hired
  * @property string $Status
  */
 class Nomzodlar extends ActiveRecord
@@ -36,11 +35,10 @@ class Nomzodlar extends ActiveRecord
     {
         return [
             [['Name', 'FamilyName', 'Address', 'CountryOfOrigin', 'Education', 'EmailAddress', 'PhoneNumber', 'Age'], 'required'],
-            [['Age', 'Hired'], 'integer'],
+            [['Age'], 'integer'],
             [['Name', 'FamilyName', 'EmailAddress'], 'string', 'max' => 50],
             [['Address'], 'string', 'max' => 100],
-            [['Education'], 'string', 'max'=>20],
-            [['CountryOfOrigin', 'PhoneNumber', 'Status'], 'string', 'max' => 20],
+            [['CountryOfOrigin', 'PhoneNumber', 'Education', 'Status'], 'string', 'max' => 20],
             [['EmailAddress'], 'unique'],
             [['PhoneNumber'], 'unique'],
         ];
@@ -61,7 +59,6 @@ class Nomzodlar extends ActiveRecord
             'EmailAddress' => 'Elektron pochta',
             'PhoneNumber' => 'Telefon raqami',
             'Age' => 'Yoshi',
-            'Hired' => 'Hired',
             'Status' => 'Status',
         ];
     }

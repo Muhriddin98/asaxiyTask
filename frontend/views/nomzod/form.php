@@ -70,6 +70,7 @@ use yii\widgets\ActiveForm;
                 'placeholder'=>'example@gmail.com'
         ]) ?>
         <?= $form->field($model, 'PhoneNumber')->input('text',[
+            'minlength'=>13,
             'maxlength'=>13,
             'id'=>'phone',
             'placeholder'=>'+998XXXXXXXXX'

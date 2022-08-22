@@ -1,6 +1,7 @@
 RewriteEngine On
-RewriteRule ^(frontend|backend)/web/ - [L]
-RewriteRule ^backend(/(.*))?$ backend/web/$2 [S=1]
+RewriteRule ^(frontend|backend|restapi)/web/ - [L]
+RewriteRule ^backend(/(.*))?$ backend/web/$2 [S=2]
+RewriteRule ^restapi(/(.*))?$ restapi/web/$2 [S=1]
 RewriteRule .* frontend/web/$0
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

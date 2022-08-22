@@ -9,7 +9,15 @@ class NomzodController extends Controller
     public function actionIndex()
     {
         $model = new Nomzodlar;
-        return $this->render('form', ['model'=>$model]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->render('success', [
+                'id' => $model->id,
+            ]);
+        } else {
+            return $this->render('form', [
+                'model' => $model,
+            ]);
+        }
     }
 
 }
