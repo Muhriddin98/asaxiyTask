@@ -26,7 +26,6 @@ class m220821_083352_create_nomzodlar_table extends Migration
             'EmailAddress'=>$this->string(50)->notNull()->unique(),
             'PhoneNumber'=>$this->string(20)->notNull()->unique(),
             'Age'=>$this->integer()->notNull(),
-            'Hired'=>$this->boolean()->notNull()->defaultValue(false),
             'Status'=>$this->string(20)->notNull()->defaultValue('Yangi'),
         ], $tableOptions);
     }
