@@ -22,6 +22,7 @@ class m220821_083352_create_nomzodlar_table extends Migration
             'FamilyName'=>$this->string(50)->notNull(),
             'Address'=>$this->string(100)->notNull(),
             'CountryOfOrigin'=>$this->string(20)->notNull(),
+            'Education'=>$this->string(20)->notNull(),
             'EmailAddress'=>$this->string(50)->notNull()->unique(),
             'PhoneNumber'=>$this->string(20)->notNull()->unique(),
             'Age'=>$this->integer()->notNull(),
