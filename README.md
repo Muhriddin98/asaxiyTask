@@ -25,5 +25,6 @@ Demak proyekt ishlashga tayyor, endi openserver yoki boshqa localhost dasturda p
 nomzod taraf uchun link "http://domen/nomzod",
 admin taraf uchun link "http://domen/backend",
 login => 'Admin',
-parol => 'mrx.1998'
+parol => 'mrx.1998'.
+<h2>REST API lar bilan ishlash "screenshots" papkasida keltirilgan.</h2>
 </pre>
